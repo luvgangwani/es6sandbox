@@ -1,0 +1,29 @@
+<!-- Babel converts ES6 code to ES5 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script> -->
+	<style type="text/css">
+	</style>
+	<title>Async and Fetch</title>
+</head>
+<body>
+</body>
+	<script>
+		(async(loginName) => {
+			try {
+
+				var api = `https://api.github.com/users/${loginName}/followers`
+				var request = await fetch(api)
+				var json = await request.json()
+				var followerList = json.map(user => user.login)
+				followerList = followerList.join("\n")
+
+				console.log(followerList)
+			}
+			catch(e){
+				console.log("Couldn't load data", e)
+			}
+		})("eveporcello")
+	</script>
+</html>

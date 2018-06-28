@@ -1,0 +1,18 @@
+<!-- Babel converts ES6 code to ES5 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"></script>
+	<title>In browser Babel Transpiling</title>
+</head>
+<body>
+
+</body>
+<script type="text/babel">
+	var nameFunction = function (firstName="John", lastName="Doe") {
+		console.log("Full name is", firstName, lastName)
+	};
+
+	nameFunction();
+</script>
+</html>

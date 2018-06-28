@@ -1,0 +1,25 @@
+<!-- Babel converts ES6 code to ES5 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<style type="text/css">
+	</style>
+	<title>Symbols</title>
+</head>
+<body>
+</body>
+	<script type="text/babel">
+		let id = Symbol()
+
+		let courseInfo = {
+			title: "ES6",
+			topics: ["react", "javascript", "node"],
+			id: "js-course" // This is the id attribute the object
+		}
+
+		courseInfo[id] = 41284 // This is a symbol. Symbols are often used as unique identifiers
+
+		console.log(courseInfo)
+	</script>
+</html>

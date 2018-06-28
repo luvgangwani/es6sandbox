@@ -1,0 +1,30 @@
+<!-- Babel converts ES6 code to ES5 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<style type="text/css">
+	</style>
+	<title>Const Keyword</title>
+</head>
+<body>
+</body>
+	<script type="text/babel">
+		function coldEnough(deg){
+			let msg = ''
+			const freezingTemp = 32 // const is used to declare constant values
+			if(deg < freezingTemp){
+				msg = deg + ' is less than the freezing temperature'
+			}
+			else {
+				msg = deg + ' is greater than the freezing temperature'
+			}
+
+			return msg
+		}
+
+		console.log(coldEnough(42))
+		console.log(coldEnough(14))
+		console.log(coldEnough(-10))
+	</script>
+</html>

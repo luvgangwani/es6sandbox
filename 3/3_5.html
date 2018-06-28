@@ -1,0 +1,41 @@
+<!-- Babel converts ES6 code to ES5 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<style type="text/css">
+	</style>
+	<title>Maps</title>
+</head>
+<body>
+</body>
+	<script type="text/babel">
+		let course = new Map()
+
+		course.set('react', {description : 'UI'})
+		course.set('jest', {description : 'test', id: 45})
+
+		console.log(course)
+		console.log(course.react) // undefined
+		console.log(course.get('react').description)
+		console.log(course.get('react')['description'])
+		console.log(course.get('jest').id)
+
+		// Alternate instantiation
+
+		let details = new Map([
+			// ['item1',{id : 'value1'}],
+			// ['item2',{id : 'value2'}]
+			['item1', 'value1'],
+			['item2',['id', 'value2']]
+		])
+
+		console.log(details)
+
+		// Looping through a map
+
+		details.forEach(function(value, key){
+			console.log(key, value)
+		})
+	</script>
+</html>

@@ -1,0 +1,62 @@
+<!-- Babel converts ES6 code to ES5 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<style type="text/css">
+	</style>
+	<title>For/Of loop</title>
+</head>
+<body>
+</body>
+	<script type="text/babel">
+		// Loop through strings
+
+		for (let each_letter of 'Javascript'){
+			console.log(each_letter);
+		};
+
+		console.log("----------------------------------------");
+
+		// Loop through arrays
+
+		let data = ['Javascript', 'Node', 'React'];
+
+		for (let each_item of data) {
+			console.log(each_item);
+		};
+
+		console.log("----------------------------------------");
+
+		// Loop through maps
+
+		let courses = new Map();
+
+		courses.set("HTML", "/class/html");
+		courses.set("CSS", "/class/css");
+		courses.set("Node", "/class/node");
+		courses.set("React", "/class/react");
+
+		for (let course of courses){
+			console.log(course);
+		};
+
+		// Iterate throught the keys of a map
+
+		for (let course of courses.keys()){
+			console.log("Course name is", course);
+		};
+
+		// Iterate through the values of a map
+
+		for (let course of courses.values()){
+			console.log("You can find the description at", course);
+		};
+
+		// Using entries
+
+		for (let course of courses.entries()){
+			console.log(course)
+		}
+	</script>
+</html>

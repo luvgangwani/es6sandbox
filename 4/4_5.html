@@ -1,0 +1,62 @@
+<!-- Babel converts ES6 code to ES5 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<style type="text/css">
+	</style>
+	<title>Destructuring Assignment</title>
+</head>
+<body>
+</body>
+	<script type="text/babel">
+		
+		// Array destructuring
+
+		// var cities = ['Spokane', 'California', 'Seattle', 'Los Angeles', 'Texas']
+
+		var [cityOne,,cityThree,,] = ['Spokane', 'California', 'Seattle', 'Los Angeles', 'Texas']
+
+		console.log(cityOne)
+		console.log(cityThree)
+
+		console.log('-------------------------------------------')
+
+		// Object destructuring
+
+		/* var sandwich = {
+
+			name: 'Reuben',
+			price: 7,
+			ingredients: ['ing1', 'ing2', 'ing3', 'ing4']
+		} */
+
+		var {name, ingredients} = {
+
+			name: 'Reuben',
+			price: 7,
+			ingredients: ['ing1', 'ing2', 'ing3', 'ing4']
+		}
+
+		console.log(name)
+		console.log(ingredients)
+
+		// Object destructuring using function call
+
+		let vacation = {
+			destination: 'Chile',
+			travelers: 2,
+			activity: 'Skiing',
+			cost: 4000
+		}
+
+		let vacationMarketing = function({destination, activity}){
+
+			console.log(`Come to ${destination} and do ${activity}`)
+
+		}
+
+		vacationMarketing(vacation)
+
+	</script>
+</html>

@@ -1,0 +1,33 @@
+<!-- Babel converts ES6 code to ES5 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<style type="text/css">
+		section div {
+			height: 100px;
+			width: 100px;
+			background-color: blue;
+			margin: 3px;
+			float: left;
+			cursor: pointer;
+		}
+	</style>
+	<title>Let Keyword</title>
+</head>
+<body>
+	<header>
+		<h1>Click on the box</h1>
+	</header>
+	<section></section>
+</body>
+	<script type="text/babel">
+		for(let i=0; i<45; i++) { // the let keyword helps in variable scoping within a block of code
+			var div = document.createElement('div')
+			div.onclick = function(){
+				alert ("You have clicked on box #" + i)
+			}
+			document.getElementsByTagName("section")[0].appendChild(div)
+		}
+	</script>
+</html>

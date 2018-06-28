@@ -1,0 +1,47 @@
+<!-- Babel converts ES6 code to ES5 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<style type="text/css">
+	</style>
+	<title>Getters and Setters</title>
+</head>
+<body>
+</body>
+	<script type="text/babel">
+		let attendance = {
+			_list: [],
+			set addName(name){
+				this._list.push(name)
+			},
+			get attendanceList(){
+				return this._list.join("\n")
+			}
+		}
+
+		attendance.addName = "Tessa"
+		attendance.addName = "Joanne"
+		attendance.addName = "Anna"
+		attendance.addName = "Caity"
+
+		console.log(attendance.attendanceList)
+
+		console.log("=============== Classes ===============")
+
+		class Hike {
+			constructor(distance, pace){
+				this.distance = distance
+				this.pace = pace
+			}
+
+			get lengthInHours(){
+				return (this.distance / this.pace)
+			}
+		}
+
+		let mtTallac = new Hike(10, 2)
+
+		console.log(`The time taken for Mount Tallac is ${mtTallac.lengthInHours} hours`)
+	</script>
+</html>

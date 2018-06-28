@@ -1,0 +1,62 @@
+<!-- Babel converts ES6 code to ES5 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.js"></script>
+	<style type="text/css">
+	</style>
+	<title>Generators</title>
+</head>
+<body>
+</body>
+	<script type="text/babel">
+		function* director(){
+			yield "Three"
+			console.log("Yielded Three")
+			yield "Two"
+			console.log("Yielded Two")
+			yield "One"
+			console.log("Yielded One")
+			yield "Action!"
+			console.log("No yields remaining")
+		}
+
+		var action  = director()
+
+		// call the next function to get the value of each of the yield
+		// action.next().done is false until the last yield is reached
+
+		console.log(action.next())
+		console.log(action.next())
+		console.log(action.next())
+		console.log(action.next())
+		console.log(action.next())
+
+
+		function* eachItem(arr){
+			for(let i = 0; i < arr.length; i++){
+				yield arr[i]
+				console.log("Hello", i)
+			}
+		}
+
+		let letters = eachItem(['a','b','c','d','e','f','g'])
+
+		// console.log(letters.next())
+
+		let abcs = setInterval(function(){
+
+			let letter = letters.next()
+
+			if(letter.done) {
+				clearInterval(abcs)
+				console.log('I have learnt my ABC\'s')
+			}
+			else {
+				console.log(letter.value)
+			}
+		}
+		, 500)
+	</script>
+</html>

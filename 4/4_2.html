@@ -1,0 +1,33 @@
+<!-- Babel converts ES6 code to ES5 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<style type="text/css">
+	</style>
+	<title>Object Literal Enhancement</title>
+</head>
+<body>
+</body>
+	<script type="text/babel">
+		var cats = {
+
+			meow(times){
+				return ("meow".repeat(times))
+			},
+
+			purr(times){
+				return ("purr".repeat(times))
+			},
+
+			snore(times){
+				return ("snore".repeat(times))
+			},
+
+		}
+
+		console.log(cats.meow(2))
+		console.log(cats.purr(3))
+		console.log(cats.snore(4))
+	</script>
+</html>

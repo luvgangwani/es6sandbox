@@ -1,0 +1,24 @@
+<!-- Babel converts ES6 code to ES5 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<style type="text/css">
+	</style>
+	<title>Spread Operator</title>
+</head>
+<body>
+</body>
+	<script type="text/babel">
+		let cats = ["cat1", "cat2", "cat3"]
+		let dogs = ["dog1", "dog2", "dog3"]
+
+		let animals = ["animal1", "animal2", cats, "animal3", "animal4", dogs] // This will create nested arrays
+
+		console.log(animals)
+
+		animals = ["animal1", "animal2", ...cats, "animal3", "animal4", ...dogs] // This will add the items from the cats and dogs array to animals array
+
+		console.log(animals)
+	</script>
+</html>

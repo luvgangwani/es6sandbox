@@ -1,0 +1,36 @@
+<!-- Babel converts ES6 code to ES5 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<style type="text/css">
+	</style>
+	<title>Sets</title>
+</head>
+<body>
+</body>
+	<script type="text/babel">
+		let books = new Set();
+
+		books.add("Pride and Prejudice");
+		books.add("War and Peace")
+			 .add("Oliver Twist");
+
+		console.log(books)
+		console.log("How many books?", books.size);
+		console.log("Has Oliver Twist?", books.has('Oliver Twist'));
+		console.log(books.delete("Oliver Twist"));
+		console.log("Still has Oliver Twist?", books.has('Oliver Twist'));
+
+		// Check uniqueness
+
+		let data = [4,32,4,5,3,2,2,3,4,5,6,4,33,2,2,4,5,6,3,3,4,5,5,43,2,2,2];
+
+		let data_set = new Set(data);
+
+		console.log("Length of data array", data.length);
+		console.log(data)
+		console.log("Size of set created from the data array", data.size)
+		console.log(data_set)
+	</script>
+</html>
